@@ -3,6 +3,7 @@ package com.devlink.devlink;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
 public class DevLinkApplication {
 
@@ -11,3 +12,5 @@ public class DevLinkApplication {
 	}
 
 }
+
+// CHANGE ALLOWED PORTS IN CORS CONFIG IF SWITCHING FROM DEV TO PRODUCTION PURPOSES

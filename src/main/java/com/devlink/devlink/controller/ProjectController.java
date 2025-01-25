@@ -43,4 +43,12 @@ public class ProjectController {
         return projectDao.deleteProject(id);
     }
 
+
+    // non crud op:
+
+    @GetMapping("/createdBy")
+    public List<Project> getProjectsByCreator(@RequestParam("createdBy") Long createdBy) {
+        return projectDao.getProjectsByCreator(createdBy);
+    }
+
 }
