@@ -23,7 +23,7 @@ public class SkillController {
         return skillDao.getSkillById(id);
     }
 
-    @GetMapping("/users/{user_id}")
+    @GetMapping("/{user_id}")
     public List<Skill> getSkillsByUserId(@PathVariable Long user_id) {
         return skillDao.getSkillsByUserId(user_id);
     }
