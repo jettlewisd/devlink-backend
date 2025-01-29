@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/connections")
+@CrossOrigin
 public class ConnectionController {
 
     private final ConnectionDao connectionDao;

@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/skills")
+@CrossOrigin
 public class SkillController {
 
     private final SkillDao skillDao;
@@ -23,7 +24,7 @@ public class SkillController {
         return skillDao.getSkillById(id);
     }
 
-    @GetMapping("/{user_id}")
+    @GetMapping("/users/{user_id}")
     public List<Skill> getSkillsByUserId(@PathVariable Long user_id) {
         return skillDao.getSkillsByUserId(user_id);
     }

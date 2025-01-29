@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/projects")
+@CrossOrigin
 public class ProjectController {
 
     private final ProjectDao projectDao;
@@ -46,8 +47,8 @@ public class ProjectController {
 
     // non crud op:
 
-    @GetMapping("/createdBy")
-    public List<Project> getProjectsByCreator(@RequestParam("createdBy") Long createdBy) {
+    @GetMapping("/createdBy/{createdBy}")
+    public List<Project> getProjectsByCreator(@PathVariable Long createdBy) {
         return projectDao.getProjectsByCreator(createdBy);
     }
 

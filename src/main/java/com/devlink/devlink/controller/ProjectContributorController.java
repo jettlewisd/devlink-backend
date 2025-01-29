@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/project_contributors")
+@CrossOrigin
 public class ProjectContributorController {
 
     private final ProjectContributorDao projectContributorDao;
