@@ -27,66 +27,58 @@ DevLink is a full-stack social collaboration platform for developers, designed t
 
 ---
 
-## 📁 Project Structure
-
-```
-src/
-├── main/
-│   ├── java/com/devlink/
-│   │   ├── controller/        # REST controllers
-│   │   ├── dao/               # DAO interfaces and JDBC implementations
-│   │   ├── model/             # Entity classes
-│   │   ├── service/           # Business logic
-│   │   ├── exception/         # Custom exceptions and global handler
-│   │   └── DevLinkApplication.java
-│   └── resources/
-│       ├── application.properties
-│       └── schema.sql         # (optional) DB schema if used for init
-└── test/
-```
-
----
 
 ## 🧪 How to Run
 
-### 1. Clone the repository
+1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/devlink-backend.git
+git clone https://github.com/jettlewisd/devlink-backend.git
 cd devlink-backend
 ```
 
-### 2. Set up the database
+2. **Set up PostgreSQL**
 
-Make sure PostgreSQL is running and create a database named `devlink`.
+Make sure PostgreSQL is installed and running on your system.  
+Then create a database for the project:
 
 ```sql
-CREATE DATABASE devlink;
+CREATE DATABASE devlink_db;
 ```
 
-### 3. Configure application properties
+3. **Configure application properties**
 
-Edit `src/main/resources/application.properties`:
+Edit the `src/main/resources/application.properties` file to match your local PostgreSQL setup (use the values provided below):
 
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/devlink
-spring.datasource.username=your_username
-spring.datasource.password=your_password
+spring.application.name=DevLink
+
+# Database connection
+spring.datasource.url=jdbc:postgresql://localhost:5432/devlink_db
+spring.datasource.name=devlink_db
+spring.datasource.username=postgres
+spring.datasource.password=postgres1
 spring.datasource.driver-class-name=org.postgresql.Driver
 
-spring.jpa.hibernate.ddl-auto=none
-server.port=8080
+# Hibernate configuration (optional)
+spring.sql.init.mode=always
 ```
 
-### 4. Run the application
+4. **Populate the database**
 
-Using IntelliJ IDEA or:
+Use the provided SQL file (`schema.sql`, `data.sql`, or any included instructions) to create the tables and add sample data. If no file is included, you will need to add your own data manually. (Check the resources folder for SQL files).
+
+5. **Run the application**
+
+Using IntelliJ IDEA or from the terminal:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-App runs at: `http://localhost:8080`
+The backend will start at: [http://localhost:8080](http://localhost:8080)
+
+
 
 ---
 
